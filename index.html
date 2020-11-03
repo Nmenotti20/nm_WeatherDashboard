@@ -24,7 +24,7 @@
         <h1 class="mx-auto text-light">Weather Dashboard</h1>
     </nav>
 
-    <!--Search Field and Button-->
+    <!--container-left with Search Field and Button-->
     <div id="container-left" class="float-left bg-light">
         <div class="mx-2">
             <h4>Search for a City:</h4>
@@ -33,6 +33,24 @@
             <div id="cities" class="bg-white mt-3 border rounded"></div>
         </div>  
     </div>
+
+    <!--container-right-->
+    <div id="container-right" class="float-right hide">
+        
+        <!--today-container-->
+        <div id="today-container" class="my-3 ml-3 border rounded">
+            
+            <!--today div-->
+            <div id="today" class="mt-4 ml-4">
+                <h2><span id="current-city">City</span> <span class="date">(date)</span></h2>
+                <h5 class="mt-4 mb-4">Temperature: <span class="temp"></span></h5>
+                <h5 class="mb-4">Humidity: <span class="humidity"></span></h5>
+                <h5 class="mb-4">Wind Speed: <span id="wind-speed"></span></h5>
+                <h5 class="mb-5">UV Index: <span id="uv-index" class="rounded text-white px-2"></span></h5>
+            </div>
+        </div>
+
+        <!--forcast-container-->
 
 
 
