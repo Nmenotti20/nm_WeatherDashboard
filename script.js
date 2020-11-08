@@ -1,12 +1,14 @@
 var citiesArray;
 var makeClickable;
 var uvColors = ["green" ,"green", "green", "yellow", "yellow", "yellow", "orange", "orange", "red", "red", "red", "purple", "purple", "purple"];
+
+// On the click of the search button, run the function.//
 $("#search-btn").on("click", function(e) {
     
-    var APIKey = "ae2dcc589707f61a832c268641e09317";
+    var APIKey = "c73280f8a10183b006025520da41c1f8";
     var city = $("#search").val();
 
-    // Populate the Name of the Searched City in the list under the search field.
+    // Populate the Name of the Searched City in the list under the search field.//
     var array = [];
     if (localStorage.getItem("cities")) {
         JSON.parse(localStorage.getItem("cities")).map(item => array.push(item));
@@ -19,7 +21,7 @@ $("#search-btn").on("click", function(e) {
     }
     console.log(localStorage.getItem("cities"));
 
-    // URL to query the api.openweathermap.org API.
+    // OpenWeatherMap API link for current weather by city name //
     var weatherURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
 
     // AJAX call to retreive data from API. //
@@ -54,6 +56,7 @@ $("#search-btn").on("click", function(e) {
             $("#uv-index").css("background-color", uvColors[Math.floor(response[0].value)]);
          })
 
+        // OpenWeatherMap API link for forcast by city name//   
         var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIKey;
         
         // AJAX call to retreive data from API //
